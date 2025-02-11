@@ -1,0 +1,45 @@
+# Install fnm using winget
+winget install schniz.fnm
+
+# Set up fnm environment
+fnm env --use-on-cd | Out-String | Invoke-Expression
+fnm --version
+
+# Install Node.js LTS version
+fnm install lts-latest
+
+# Use the installed version
+fnm use lts-latest
+
+node --version
+
+const fetchPoolPrices = async () => {
+  try {const apiUrl = 'https://apimgw.aeso.ca/public/poolprice-api/v1.1/price/poolPrice';
+    const params = new URLSearchParams({
+      startDate: '2025-01-09',
+      endDate: '2025-02-09',
+      const response = await fetch(`${apiUrl}?${params.toString()}`, {
+      method: 'GET',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'API-KEY': '9a3cf04718fb450691da5375356d6a1e',
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            const data = await response.json();
+            console.log('Fetched Data:', data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+  }
+};
+fetchPoolPrices();
+
+# See current directory
+pwd
+
+# List files in current directory
+ls
+
+# Navigate to the directory containing fetchPrices.js
+cd Documents  # or wherever you saved the file
+
+node fetchPrices.js
